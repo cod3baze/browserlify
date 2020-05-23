@@ -1,8 +1,12 @@
 {
   "name": "browserlify",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A browser in electron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliasallex/browserlify.git"
+  },
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "electron .",
@@ -12,9 +16,12 @@
     "electron",
     "browser-electron"
   ],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-reload": "^1.5.0"
   }
 }
