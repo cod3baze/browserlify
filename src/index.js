@@ -1,4 +1,8 @@
-const { app, BrowserWindow, globalShortcut } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  globalShortcut
+} = require("electron");
 const path = require("path");
 
 let win = null;
@@ -8,6 +12,7 @@ function createWindow() {
     width: 1300,
     height: 700,
     titleBarStyle: "hidden",
+    backgroundColor: "#212134",
     title: "Loading..",
     alwaysOnTop: false,
     webPreferences: {
@@ -25,10 +30,6 @@ function toggleDevTools() {
 
 function createShortcuts() {
   globalShortcut.register("CmdOrCtrl+j", toggleDevTools);
-  globalShortcut.register("AltOrOption", () => {
-    console.log("Alt action");
-    win.toggleTabBar();
-  });
 }
 
 app.whenReady().then(createWindow).then(createShortcuts);

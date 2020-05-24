@@ -1,0 +1,80 @@
+div#App {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+:root {
+  --primary-color: #fd951f;
+}
+
+#App aside {
+  width: 250px;
+}
+
+aside div#header-group {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #FFF;
+  padding: 10px 5px;
+  font-family: 'Roboto';
+}
+
+div#header-group a {
+  color: #fd951f;
+}
+
+aside div#get-group {
+  padding: 0px 5px;
+}
+
+/* "ASIDE-INPUT-SEARCH" */
+
+input {
+  width: 100%;
+
+  border: 2px solid var(--primary-color);
+  /* border-right: none; */
+  border-radius: 6px 2px 4px 6px;
+
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: 'Roboto';
+
+  outline: none;
+
+  color: #212121;
+}
+
+input:focus {
+  color: black;
+}
+
+/* "MAIN-CONTENT-DND" */
+
+#App main {
+  display: flex;
+  justify-content: flex-start;
+
+  width: 100%;
+  padding-left: 20px;
+}
+
+main div#content-group.window-actived {
+  position: relative;
+}
+
+div#content-group header {
+  padding: 8px 5px;
+  border-left: 1px solid #fd951f;
+  border-right: .1px solid #ffa6411c;
+  color: #f8f8f88f;
+  max-width: 160px;
+}
+
+div#content-group div#body-content {
+  height: 200px;
+  width: 400px;
+  background-color: aliceblue;
+}
