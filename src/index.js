@@ -1,9 +1,16 @@
-const { app, BrowserWindow, globalShortcut, dialog } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  globalShortcut,
+  dialog,
+  Menu
+} = require("electron");
 const path = require("path");
+const getTemplate = require('./config/menu')
 
 let win = null;
 
-function createWindow() {
+const createWindow = () => {
   win = new BrowserWindow({
     width: 1300,
     height: 700,
@@ -37,17 +44,26 @@ function createWindow() {
 
   const file = path.join(__dirname, "public", "index.html");
   win.loadFile(file);
-}
+};
 
-function toggleDevTools() {
+const toggleDevTools = () => {
   win.webContents.toggleDevTools();
-}
+};
 
-function createShortcuts() {
+const createShortcuts = () => {
   globalShortcut.register("CmdOrCtrl+j", toggleDevTools);
-}
+};
 
-app.whenReady().then(createWindow).then(createShortcuts);
+app.whenReady().then(() => {
+  const menu = Menu.buildFromTemplate(getTemplate)
+  Menu.setApplicationMenu(menu)
+
+  createWindow()
+}).then(createShortcuts);
+
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
+});
 
 app.on("window-all-closed", () => {
   if (process.platform === "darwin") {

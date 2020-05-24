@@ -1,3 +1,8 @@
+html,
+body {
+  background: #313131;
+}
+
 div#App {
   display: flex;
   flex-direction: row;
@@ -9,7 +14,7 @@ div#App {
 }
 
 #App aside {
-  width: 250px;
+  width: 290px;
 }
 
 aside div#header-group {
@@ -26,6 +31,7 @@ div#header-group a {
 }
 
 aside div#get-group {
+  position: relative;
   padding: 0px 5px;
 }
 
@@ -51,6 +57,24 @@ input:focus {
   color: black;
 }
 
+button#get {
+  position: absolute;
+  right: 5px;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+
+  margin-top: 2px;
+  border-radius: 3px;
+  width: 25px;
+  height: 30px;
+}
+
+button#get:hover {
+  background-color: #fd951f;
+  color: #FFF;
+}
+
 /* "MAIN-CONTENT-DND" */
 
 #App main {
@@ -61,20 +85,49 @@ input:focus {
   padding-left: 20px;
 }
 
+main div#content-group {
+  display: none;
+}
+
 main div#content-group.window-actived {
+  display: block;
+
   position: relative;
+  background-color: #212134;
+  width: 100%;
+  height: 600px;
 }
 
 div#content-group header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 8px 5px;
-  border-left: 1px solid #fd951f;
-  border-right: .1px solid #ffa6411c;
-  color: #f8f8f88f;
   max-width: 160px;
+
+  background-color: rgba(89, 249, 255, .5);
+  border-left: 1px solid #fd951f;
+  border-right: .1px solid #fd951f;
+  color: #FFF;
 }
 
-div#content-group div#body-content {
-  height: 200px;
-  width: 400px;
-  background-color: aliceblue;
+div#content-group div#webview {
+  position: relative;
+  width: 100%;
+  height: 98%;
+  background-color: #fd951f;
+}
+
+#btn-close {
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+#btn-close:hover {
+  background-color: #fd951f;
+  color: #FFF;
 }
