@@ -7,6 +7,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,500;1,700&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/aside.css">
   <link rel="stylesheet" href="./css/global.css">
   <title>Document</title>
@@ -31,21 +34,17 @@
     <main>
       <div id="content-group" class="window-actived">
         <header>
-          <label>In bcoming</label>
+          <label id="title">In bcoming</label>
           <button id="btn-close">X</button>
         </header>
-        <div id="webview">
-          <h1>Like this</h1>
+        <div id="hist-group">
+          <button id="prev-history"> - </button>
+          <button id="next-history"> + </button>
         </div>
-      </div>
-
-      <div id="content-group" class="prev">
-        <header>
-          <label>In bcoming</label>
-          <button id="btn-close">X</button>
-        </header>
         <div id="webview">
-          <h1>Content</h1>
+          <div class="indicator" style="display: none"></div>
+          <!-- <webview id="content" src="https://www.github.com/eliasallex">
+          </webview> -->
         </div>
       </div>
     </main>
